@@ -3,10 +3,11 @@ const updatePlace = (place) => {
 		type:"UPDATE_PLACE",
 		payload: place
 	};
-}
+};
 
-const updatetotalData = (place) => (dispatch) => {
-	return(
+const updatetotalData = (place) => {
+	return(dispatch) => {
+	
 		 fetch(`https://api.weatherapi.com/v1/forecast.json?key=6d8af3f1434344cb96a163106210508&q=${place}`)
 	    .then(res => res.json())
 	    .then(data => 
@@ -15,13 +16,13 @@ const updatetotalData = (place) => (dispatch) => {
 	    			payload :data
 	    		})
 	    	)
-	);
-}	
+	}
+};	
 const toggledata = () => {
 	return {
 		type: "TOGGLE_DATA",
 		
 	};
-}
+};
 
 export {updatePlace , updatetotalData , toggledata};
